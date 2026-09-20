@@ -1,0 +1,81 @@
+[2026-09-12 13:28:22] [INFO] [calibrate_clear]: === ベクトル化キャリブレーション処理を開始します (Device: cpu) ===
+[2026-09-12 13:28:22] [INFO] [calibrate_clear]: --- [SP] データロード・前処理中 ---
+[2026-09-12 13:28:22] [ERROR] [calibrate_clear]: キャリブレーション中にエラーが発生しました: name 'MUser' is not defined
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/scripts/calibrate_clear_irt.py", line 46, in calibrate_clear
+    raw_users = db.query(MUser).filter(MUser.delete_flag == 0).all()
+                         ^^^^^
+NameError: name 'MUser' is not defined
+[2026-09-12 13:32:47] [INFO] [calibrate_clear]: === ベクトル化キャリブレーション処理を開始します (Device: cpu) ===
+[2026-09-12 13:32:47] [INFO] [calibrate_clear]: --- [SP] データロード・前処理中 ---
+[2026-09-12 13:32:47] [ERROR] [calibrate_clear]: キャリブレーション中にエラーが発生しました: 'Session' object has no attribute 'queryscore_models'
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/scripts/calibrate_clear_irt.py", line 49, in calibrate_clear
+    played_count = db.queryscore_models.Score.filter(
+                   ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Session' object has no attribute 'queryscore_models'
+[2026-09-12 13:37:44] [INFO] [calibrate_clear]: === ベクトル化キャリブレーション処理を開始します (Device: cpu) ===
+[2026-09-12 13:37:44] [INFO] [calibrate_clear]: --- [SP] データロード・前処理中 ---
+[2026-09-12 13:37:45] [ERROR] [calibrate_clear]: キャリブレーション中にエラーが発生しました: name 'Score' is not defined
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/scripts/calibrate_clear_irt.py", line 50, in calibrate_clear
+    Score.user_id == u.user_id,
+    ^^^^^
+NameError: name 'Score' is not defined
+[2026-09-12 13:38:32] [INFO] [calibrate_clear]: === ベクトル化キャリブレーション処理を開始します (Device: cpu) ===
+[2026-09-12 13:38:32] [INFO] [calibrate_clear]: --- [SP] データロード・前処理中 ---
+[2026-09-12 13:38:32] [INFO] [calibrate_clear]: [SP] 計算対象: アクティブユーザー 20 名 | 譜面 7546 件 | プレイログ 653 件
+[2026-09-12 13:38:47] [ERROR] [calibrate_clear]: キャリブレーション中にエラーが発生しました: name 'DUserIrt' is not defined
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/scripts/calibrate_clear_irt.py", line 182, in calibrate_clear
+    u_obj.irt_param = DUserIrt(user_id=uid)
+                      ^^^^^^^^
+NameError: name 'DUserIrt' is not defined
+[2026-09-12 13:40:06] [INFO] [calibrate_clear]: === ベクトル化キャリブレーション処理を開始します (Device: cpu) ===
+[2026-09-12 13:40:06] [INFO] [calibrate_clear]: --- [SP] データロード・前処理中 ---
+[2026-09-12 13:40:06] [INFO] [calibrate_clear]: [SP] 計算対象: アクティブユーザー 20 名 | 譜面 7546 件 | プレイログ 653 件
+[2026-09-12 13:40:19] [INFO] [calibrate_clear]: [SP] キャリブレーション成功 (ユーザー: 20名, 譜面: 7546件)
+[2026-09-12 13:40:19] [INFO] [calibrate_clear]: --- [DP] データロード・前処理中 ---
+[2026-09-12 13:40:19] [INFO] [calibrate_clear]: [DP] 計算対象: アクティブユーザー 20 名 | 譜面 183 件 | プレイログ 734 件
+[2026-09-12 13:40:19] [INFO] [calibrate_clear]: [DP] キャリブレーション成功 (ユーザー: 20名, 譜面: 183件)
+[2026-09-12 13:40:21] [INFO] [calibrate_clear]: === 全キャリブレーション処理完了 (処理時間: 15.8秒) ===
+[2026-09-12 13:42:03] [INFO] [calibrate_clear]: === ベクトル化キャリブレーション処理を開始します (Device: cpu) ===
+[2026-09-12 13:42:03] [INFO] [calibrate_clear]: --- [SP] データロード・前処理中 ---
+[2026-09-12 13:42:03] [INFO] [calibrate_clear]: [SP] 計算対象: アクティブユーザー 20 名 | 譜面 7546 件 | プレイログ 653 件
+[2026-09-12 13:42:16] [INFO] [calibrate_clear]: [SP] キャリブレーション成功 (ユーザー: 20名, 譜面: 7546件)
+[2026-09-12 13:42:16] [INFO] [calibrate_clear]: --- [DP] データロード・前処理中 ---
+[2026-09-12 13:42:16] [INFO] [calibrate_clear]: [DP] 計算対象: アクティブユーザー 20 名 | 譜面 183 件 | プレイログ 734 件
+[2026-09-12 13:42:16] [INFO] [calibrate_clear]: [DP] キャリブレーション成功 (ユーザー: 20名, 譜面: 183件)
+[2026-09-12 13:42:19] [INFO] [calibrate_clear]: === 全キャリブレーション処理完了 (処理時間: 15.87秒) ===
+[2026-09-12 13:45:08] [INFO] [calibrate_clear]: === ベクトル化キャリブレーション処理を開始します (Device: cpu) ===
+[2026-09-12 13:45:08] [INFO] [calibrate_clear]: --- [SP] データロード・前処理中 ---
+[2026-09-12 13:45:08] [INFO] [calibrate_clear]: [SP] 計算対象: アクティブユーザー 20 名 | 譜面 7546 件 | プレイログ 653 件
+[2026-09-12 13:45:20] [INFO] [calibrate_clear]: [SP] キャリブレーション成功 (ユーザー: 20名, 譜面: 7546件)
+[2026-09-12 13:45:20] [INFO] [calibrate_clear]: --- [DP] データロード・前処理中 ---
+[2026-09-12 13:45:20] [INFO] [calibrate_clear]: [DP] 計算対象: アクティブユーザー 20 名 | 譜面 183 件 | プレイログ 734 件
+[2026-09-12 13:45:21] [INFO] [calibrate_clear]: [DP] キャリブレーション成功 (ユーザー: 20名, 譜面: 183件)
+[2026-09-12 13:45:23] [INFO] [calibrate_clear]: === 全キャリブレーション処理完了 (処理時間: 15.59秒) ===
+[2026-09-12 13:47:04] [INFO] [calibrate_clear]: === ベクトル化キャリブレーション処理を開始します (Device: cpu) ===
+[2026-09-12 13:47:04] [INFO] [calibrate_clear]: --- [SP] データロード・前処理中 ---
+[2026-09-12 13:47:04] [INFO] [calibrate_clear]: [SP] 計算対象: アクティブユーザー 20 名 | 譜面 7546 件 | プレイログ 653 件
+[2026-09-12 13:47:17] [INFO] [calibrate_clear]: [SP] キャリブレーション成功 (ユーザー: 20名, 譜面: 7546件)
+[2026-09-12 13:47:17] [INFO] [calibrate_clear]: --- [DP] データロード・前処理中 ---
+[2026-09-12 13:47:17] [INFO] [calibrate_clear]: [DP] 計算対象: アクティブユーザー 20 名 | 譜面 183 件 | プレイログ 734 件
+[2026-09-12 13:47:18] [INFO] [calibrate_clear]: [DP] キャリブレーション成功 (ユーザー: 20名, 譜面: 183件)
+[2026-09-12 13:47:24] [INFO] [calibrate_clear]: === 全キャリブレーション処理完了 (処理時間: 19.76秒) ===
+[2026-09-12 13:50:31] [INFO] [calibrate_clear]: === ベクトル化キャリブレーション処理を開始します (Device: cpu) ===
+[2026-09-12 13:50:31] [INFO] [calibrate_clear]: --- [SP] データロード・前処理中 ---
+[2026-09-12 13:50:31] [INFO] [calibrate_clear]: [SP] 計算対象: アクティブユーザー 20 名 | 譜面 7546 件 | プレイログ 653 件
+[2026-09-12 13:50:44] [INFO] [calibrate_clear]: [SP] キャリブレーション成功 (ユーザー: 20名, 譜面: 7546件)
+[2026-09-12 13:50:44] [INFO] [calibrate_clear]: --- [DP] データロード・前処理中 ---
+[2026-09-12 13:50:44] [INFO] [calibrate_clear]: [DP] 計算対象: アクティブユーザー 20 名 | 譜面 183 件 | プレイログ 734 件
+[2026-09-12 13:50:45] [INFO] [calibrate_clear]: [DP] キャリブレーション成功 (ユーザー: 20名, 譜面: 183件)
+[2026-09-12 13:50:46] [INFO] [calibrate_clear]: === 全キャリブレーション処理完了 (処理時間: 14.54秒) ===
+[2026-09-12 13:52:32] [INFO] [calibrate_clear]: === ベクトル化キャリブレーション処理を開始します (Device: cpu) ===
+[2026-09-12 13:52:32] [INFO] [calibrate_clear]: --- [SP] データロード・前処理中 ---
+[2026-09-12 13:52:32] [INFO] [calibrate_clear]: [SP] 計算対象: アクティブユーザー 20 名 | 譜面 7546 件 | プレイログ 653 件
+[2026-09-12 13:52:47] [INFO] [calibrate_clear]: [SP] キャリブレーション成功 (ユーザー: 20名, 譜面: 7546件)
+[2026-09-12 13:52:47] [INFO] [calibrate_clear]: --- [DP] データロード・前処理中 ---
+[2026-09-12 13:52:47] [INFO] [calibrate_clear]: [DP] 計算対象: アクティブユーザー 20 名 | 譜面 183 件 | プレイログ 734 件
+[2026-09-12 13:52:47] [INFO] [calibrate_clear]: [DP] キャリブレーション成功 (ユーザー: 20名, 譜面: 183件)
+[2026-09-12 13:52:49] [INFO] [calibrate_clear]: === 全キャリブレーション処理完了 (処理時間: 16.77秒) ===

@@ -1,0 +1,50 @@
+[2026-09-13 20:22:02] [INFO] [calibrate_score]: === スコア力（EXスコア IRT）のキャリブレーションを開始します ===
+[2026-09-13 20:22:02] [INFO] [calibrate_score]: 取得した譜面数: 7729
+[2026-09-13 20:22:10] [INFO] [calibrate_score]: 取得したユーザー数: 20
+[2026-09-13 20:22:10] [INFO] [calibrate_score]: --- 譜面難易度 (b_score) の最適化を開始します ---
+[2026-09-13 20:22:10] [INFO] [calibrate_score]: [DEBUG 譜面] chart_id=0001, style=0, ヒットスコア数=0, notes=2324
+[2026-09-13 20:22:10] [INFO] [calibrate_score]: [DEBUG 譜面] chart_id=0001, style=1, ヒットスコア数=5, notes=2324
+[2026-09-13 20:22:10] [INFO] [calibrate_score]: [DEBUG 譜面] chart_id=0002, style=0, ヒットスコア数=0, notes=319
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: --- 譜面難易度 (b_score) の最適化が完了しました (更新譜面数: 134) ---
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: --- ユーザー能力値 (ability_score) の最適化を開始します ---
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=1, style=0, ヒットスコア数=21
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=1, style=1, ヒットスコア数=29
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=2, style=0, ヒットスコア数=25
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=2, style=1, ヒットスコア数=28
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=3, style=0, ヒットスコア数=21
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=3, style=1, ヒットスコア数=44
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=4, style=0, ヒットスコア数=33
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=4, style=1, ヒットスコア数=22
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=5, style=0, ヒットスコア数=29
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=5, style=1, ヒットスコア数=46
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=6, style=0, ヒットスコア数=49
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=6, style=1, ヒットスコア数=29
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=7, style=0, ヒットスコア数=21
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=7, style=1, ヒットスコア数=47
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=8, style=0, ヒットスコア数=39
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=8, style=1, ヒットスコア数=28
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=9, style=0, ヒットスコア数=24
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=9, style=1, ヒットスコア数=32
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=10, style=0, ヒットスコア数=48
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=10, style=1, ヒットスコア数=32
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=11, style=0, ヒットスコア数=37
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=11, style=1, ヒットスコア数=35
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=12, style=0, ヒットスコア数=39
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=12, style=1, ヒットスコア数=44
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=13, style=0, ヒットスコア数=33
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=13, style=1, ヒットスコア数=49
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=14, style=0, ヒットスコア数=33
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=14, style=1, ヒットスコア数=36
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=15, style=0, ヒットスコア数=21
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=15, style=1, ヒットスコア数=44
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=16, style=0, ヒットスコア数=43
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=16, style=1, ヒットスコア数=48
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=17, style=0, ヒットスコア数=28
+[2026-09-13 20:22:41] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=17, style=1, ヒットスコア数=43
+[2026-09-13 20:22:42] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=18, style=0, ヒットスコア数=39
+[2026-09-13 20:22:42] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=18, style=1, ヒットスコア数=27
+[2026-09-13 20:22:42] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=19, style=0, ヒットスコア数=41
+[2026-09-13 20:22:42] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=19, style=1, ヒットスコア数=49
+[2026-09-13 20:22:42] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=20, style=0, ヒットスコア数=29
+[2026-09-13 20:22:42] [INFO] [calibrate_score]: [DEBUG ユーザー] user_id=20, style=1, ヒットスコア数=22
+[2026-09-13 20:22:42] [INFO] [calibrate_score]: === スコア力のキャリブレーションが正常に完了しました (更新ユーザーパラメータ数: 40) ===

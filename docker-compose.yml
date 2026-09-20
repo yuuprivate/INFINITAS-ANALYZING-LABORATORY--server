@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: iidx_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: iidx_user
+      POSTGRES_PASSWORD: iidx_secure_password
+      POSTGRES_DB: iidx_recommend_db
+      POSTGRES_INITDB_ARGS: "--auth-local=md5 --auth-host=md5"
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  pgdata:

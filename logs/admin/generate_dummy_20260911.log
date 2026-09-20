@@ -1,0 +1,89 @@
+[2026-09-11 16:59:03] [INFO] [generate_dummy]: === テスト用ダミーユーザーおよびスコアデータの作成を開始します ===
+[2026-09-11 16:59:03] [ERROR] [generate_dummy]: ダミーデータ作成中にエラーが発生しました: When initializing mapper Mapper[Score(scores)], expression 'MUser' failed to locate a name ('MUser'). If this is a class name, consider adding this relationship() to the <class 'src.models.score_models.Score'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project/.venv/lib/python3.14/site-packages/sqlalchemy/orm/clsregistry.py", line 516, in _resolve_name
+    rval = d[token]
+           ~^^^^^^^
+  File "/mnt/d/WSL_recommendsite/project/.venv/lib/python3.14/site-packages/sqlalchemy/util/_collections.py", line 340, in __missing__
+    self[key] = val = self.creator(key)
+                      ~~~~~~~~~~~~^^^^^
+  File "/mnt/d/WSL_recommendsite/project/.venv/lib/python3.14/site-packages/sqlalchemy/orm/clsregistry.py", line 484, in _access_cls
+    return self.fallback[key]
+           ~~~~~~~~~~~~~^^^^^
+KeyError: 'MUser'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project/src/test/generate_dummy_data.py", line 24, in generate_dummy_data
+    db.query(score_models.Score).delete()
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/WSL_recommendsite/project/.venv/lib/python3.14/site-packages/sqlalchemy/orm/session.py", line 2963, in query
+    return self._query_cls(entities, self, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/WSL_recommendsite/project/.venv/lib/python3.14/site-packages/sqlalchemy/orm/query.py", line 277, in __init__
+    self._set_entities(entities)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/mnt/d/WSL_recommendsite/project/.venv/lib/python3.14/site-packages/sqlalchemy/orm/query.py", line 290, in _set_entities
+    coercions.expect(
+    ~~~~~~~~~~~~~~~~^
+        roles.ColumnsClauseRole,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        post_inspect=True,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/mnt/d/WSL_recommendsite/project/.venv/lib/python3.14/site-packages/sqlalchemy/sql/coercions.py", line 389, in expect
+    insp._post_inspect
+  File "/mnt/d/WSL_recommendsite/project/.venv/lib/python3.14/site-packages/sqlalchemy/util/langhelpers.py", line 1234, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ~~~~~~~~~^^^^^
+  File "/mnt/d/WSL_recommendsite/project/.venv/lib/python3.14/site-packages/sqlalchemy/orm/mapper.py", line 2734, in _post_inspect
+    self._check_configure()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project/.venv/lib/python3.14/site-packages/sqlalchemy/orm/mapper.py", line 2411, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/WSL_recommendsite/project/.venv/lib/python3.14/site-packages/sqlalchemy/orm/mapper.py", line 4228, in _configure_registries
+    _do_configure_registries(registries, cascade)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/WSL_recommendsite/project/.venv/lib/python3.14/site-packages/sqlalchemy/orm/mapper.py", line 4269, in _do_configure_registries
+    mapper._post_configure_properties()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project/.venv/lib/python3.14/site-packages/sqlalchemy/orm/mapper.py", line 2428, in _post_configure_properties
+    prop.init()
+    ~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project/.venv/lib/python3.14/site-packages/sqlalchemy/orm/interfaces.py", line 595, in init
+    self.do_init()
+    ~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project/.venv/lib/python3.14/site-packages/sqlalchemy/orm/relationships.py", line 1656, in do_init
+    self._setup_entity()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project/.venv/lib/python3.14/site-packages/sqlalchemy/orm/relationships.py", line 1866, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project/.venv/lib/python3.14/site-packages/sqlalchemy/orm/clsregistry.py", line 520, in _resolve_name
+    self._raise_for_name(name, err)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/mnt/d/WSL_recommendsite/project/.venv/lib/python3.14/site-packages/sqlalchemy/orm/clsregistry.py", line 501, in _raise_for_name
+    raise exc.InvalidRequestError(
+    ...<5 lines>...
+    ) from err
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[Score(scores)], expression 'MUser' failed to locate a name ('MUser'). If this is a class name, consider adding this relationship() to the <class 'src.models.score_models.Score'> class after both dependent classes have been defined.
+[2026-09-11 17:00:05] [INFO] [generate_dummy]: === テスト用ダミーユーザーおよびスコアデータの作成を開始します ===
+[2026-09-11 17:00:05] [ERROR] [generate_dummy]: ダミーデータ作成中にエラーが発生しました: module 'src.models.score_models' has no attribute 'DUserIrt'
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project/src/test/generate_dummy_data.py", line 27, in generate_dummy_data
+    db.query(score_models.DUserIrt).delete()
+             ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'src.models.score_models' has no attribute 'DUserIrt'
+[2026-09-11 17:00:48] [INFO] [generate_dummy]: === テスト用ダミーユーザーおよびスコアデータの作成を開始します ===
+[2026-09-11 17:00:48] [ERROR] [generate_dummy]: ダミーデータ作成中にエラーが発生しました: module 'src.models.chart_models' has no attribute 'DUserIrt'
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project/src/test/generate_dummy_data.py", line 27, in generate_dummy_data
+    db.query(chart_models.DUserIrt).delete()
+             ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'src.models.chart_models' has no attribute 'DUserIrt'
+[2026-09-11 17:02:57] [INFO] [generate_dummy]: === テスト用ダミーユーザーおよびスコアデータの作成を開始します ===
+[2026-09-11 17:02:57] [INFO] [generate_dummy]: ダミーデータ作成完了: ユーザー 20 名 | スコア 1382 件

@@ -1,0 +1,423 @@
+[2026-09-12 13:00:05] [INFO] [seed]: === BEMANIWiki 全曲リストのスクレイピング・データインポートを開始します ===
+[2026-09-12 13:00:08] [ERROR] [seed]: エラーが発生しました: module 'src.models.chart_models' has no attribute 'DChartIrt'
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project_backend/src/test/seed.py", line 191, in seed_database
+    db.add(chart_models.DChartIrt(
+           ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'src.models.chart_models' has no attribute 'DChartIrt'
+[2026-09-12 13:01:23] [INFO] [seed]: === BEMANIWiki 全曲リストのスクレイピング・データインポートを開始します ===
+[2026-09-12 13:01:27] [ERROR] [seed]: エラーが発生しました: (psycopg2.errors.NotNullViolation) null value in column "notes" of relation "m_charts" violates not-null constraint
+DETAIL:  Failing row contains (0001, 0, 33, HYPER, 2, null).
+
+[SQL: INSERT INTO m_charts (chart_id, play_style, song_id, difficulty_type, level, notes) VALUES (%(chart_id__0)s, %(play_style__0)s, %(song_id__0)s, %(difficulty_type__0)s, %(level__0)s, %(notes__0)s), (%(chart_id__1)s, %(play_style__1)s, %(song_id__1)s,  ... 117079 characters truncated ... )s, %(play_style__999)s, %(song_id__999)s, %(difficulty_type__999)s, %(level__999)s, %(notes__999)s)]
+[parameters: {'play_style__0': 0, 'level__0': 2, 'chart_id__0': '0001', 'song_id__0': 33, 'difficulty_type__0': 'HYPER', 'notes__0': None, 'play_style__1': 0, 'level__1': 2, 'chart_id__1': '0002', 'song_id__1': 33, 'difficulty_type__1': 'ANOTHER', 'notes__1': None, 'play_style__2': 0, 'level__2': 7, 'chart_id__2': '0003', 'song_id__2': 33, 'difficulty_type__2': 'BEGINNER', 'notes__2': None, 'play_style__3': 0, 'level__3': 4, 'chart_id__3': '0004', 'song_id__3': 33, 'difficulty_type__3': 'HYPER', 'notes__3': None, 'play_style__4': 0, 'level__4': 9, 'chart_id__4': '0005', 'song_id__4': 33, 'difficulty_type__4': 'ANOTHER', 'notes__4': None, 'play_style__5': 0, 'level__5': 9, 'chart_id__5': '0006', 'song_id__5': 33, 'difficulty_type__5': 'LEGGENDARIA', 'notes__5': None, 'play_style__6': 0, 'level__6': 6, 'chart_id__6': '0007', 'song_id__6': 33, 'difficulty_type__6': 'BEGINNER', 'notes__6': None, 'play_style__7': 0, 'level__7': 4, 'chart_id__7': '0008', 'song_id__7': 33, 'difficulty_type__7': 'HYPER', 'notes__7': None, 'play_style__8': 0, 'level__8': 6 ... 5900 parameters truncated ... 'difficulty_type__991': 'ANOTHER', 'notes__991': None, 'play_style__992': 0, 'level__992': 11, 'chart_id__992': '0964', 'song_id__992': 56, 'difficulty_type__992': 'BEGINNER', 'notes__992': None, 'play_style__993': 0, 'level__993': 5, 'chart_id__993': '0965', 'song_id__993': 56, 'difficulty_type__993': 'HYPER', 'notes__993': None, 'play_style__994': 0, 'level__994': 10, 'chart_id__994': '0966', 'song_id__994': 56, 'difficulty_type__994': 'ANOTHER', 'notes__994': None, 'play_style__995': 0, 'level__995': 11, 'chart_id__995': '0967', 'song_id__995': 56, 'difficulty_type__995': 'LEGGENDARIA', 'notes__995': None, 'play_style__996': 0, 'level__996': 11, 'chart_id__996': '0968', 'song_id__996': 57, 'difficulty_type__996': 'BEGINNER', 'notes__996': None, 'play_style__997': 0, 'level__997': 4, 'chart_id__997': '0969', 'song_id__997': 57, 'difficulty_type__997': 'HYPER', 'notes__997': None, 'play_style__998': 0, 'level__998': 10, 'chart_id__998': '0970', 'song_id__998': 57, 'difficulty_type__998': 'ANOTHER', 'notes__998': None, 'play_style__999': 0, 'level__999': 11, 'chart_id__999': '0971', 'song_id__999': 57, 'difficulty_type__999': 'LEGGENDARIA', 'notes__999': None}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 2127, in _exec_insertmany_context
+    dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~^
+        cursor,
+        ^^^^^^^
+    ...<2 lines>...
+        context,
+        ^^^^^^^^
+    )
+    ^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "notes" of relation "m_charts" violates not-null constraint
+DETAIL:  Failing row contains (0001, 0, 33, HYPER, 2, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project_backend/src/test/seed.py", line 225, in seed_database
+    db.commit()
+    ~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/session.py", line 2035, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/session.py", line 1316, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/session.py", line 1290, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/unitofwork.py", line 465, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/persistence.py", line 94, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/persistence.py", line 1049, in _emit_insert_statements
+    result = connection.execute(
+        statement, multiparams, execution_options=execution_options
+    )
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_insertmany_context(dialect, context)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 2135, in _exec_insertmany_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e,
+        ^^
+    ...<4 lines>...
+        is_sub_exec=True,
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 2127, in _exec_insertmany_context
+    dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~^
+        cursor,
+        ^^^^^^^
+    ...<2 lines>...
+        context,
+        ^^^^^^^^
+    )
+    ^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.NotNullViolation) null value in column "notes" of relation "m_charts" violates not-null constraint
+DETAIL:  Failing row contains (0001, 0, 33, HYPER, 2, null).
+
+[SQL: INSERT INTO m_charts (chart_id, play_style, song_id, difficulty_type, level, notes) VALUES (%(chart_id__0)s, %(play_style__0)s, %(song_id__0)s, %(difficulty_type__0)s, %(level__0)s, %(notes__0)s), (%(chart_id__1)s, %(play_style__1)s, %(song_id__1)s,  ... 117079 characters truncated ... )s, %(play_style__999)s, %(song_id__999)s, %(difficulty_type__999)s, %(level__999)s, %(notes__999)s)]
+[parameters: {'play_style__0': 0, 'level__0': 2, 'chart_id__0': '0001', 'song_id__0': 33, 'difficulty_type__0': 'HYPER', 'notes__0': None, 'play_style__1': 0, 'level__1': 2, 'chart_id__1': '0002', 'song_id__1': 33, 'difficulty_type__1': 'ANOTHER', 'notes__1': None, 'play_style__2': 0, 'level__2': 7, 'chart_id__2': '0003', 'song_id__2': 33, 'difficulty_type__2': 'BEGINNER', 'notes__2': None, 'play_style__3': 0, 'level__3': 4, 'chart_id__3': '0004', 'song_id__3': 33, 'difficulty_type__3': 'HYPER', 'notes__3': None, 'play_style__4': 0, 'level__4': 9, 'chart_id__4': '0005', 'song_id__4': 33, 'difficulty_type__4': 'ANOTHER', 'notes__4': None, 'play_style__5': 0, 'level__5': 9, 'chart_id__5': '0006', 'song_id__5': 33, 'difficulty_type__5': 'LEGGENDARIA', 'notes__5': None, 'play_style__6': 0, 'level__6': 6, 'chart_id__6': '0007', 'song_id__6': 33, 'difficulty_type__6': 'BEGINNER', 'notes__6': None, 'play_style__7': 0, 'level__7': 4, 'chart_id__7': '0008', 'song_id__7': 33, 'difficulty_type__7': 'HYPER', 'notes__7': None, 'play_style__8': 0, 'level__8': 6 ... 5900 parameters truncated ... 'difficulty_type__991': 'ANOTHER', 'notes__991': None, 'play_style__992': 0, 'level__992': 11, 'chart_id__992': '0964', 'song_id__992': 56, 'difficulty_type__992': 'BEGINNER', 'notes__992': None, 'play_style__993': 0, 'level__993': 5, 'chart_id__993': '0965', 'song_id__993': 56, 'difficulty_type__993': 'HYPER', 'notes__993': None, 'play_style__994': 0, 'level__994': 10, 'chart_id__994': '0966', 'song_id__994': 56, 'difficulty_type__994': 'ANOTHER', 'notes__994': None, 'play_style__995': 0, 'level__995': 11, 'chart_id__995': '0967', 'song_id__995': 56, 'difficulty_type__995': 'LEGGENDARIA', 'notes__995': None, 'play_style__996': 0, 'level__996': 11, 'chart_id__996': '0968', 'song_id__996': 57, 'difficulty_type__996': 'BEGINNER', 'notes__996': None, 'play_style__997': 0, 'level__997': 4, 'chart_id__997': '0969', 'song_id__997': 57, 'difficulty_type__997': 'HYPER', 'notes__997': None, 'play_style__998': 0, 'level__998': 10, 'chart_id__998': '0970', 'song_id__998': 57, 'difficulty_type__998': 'ANOTHER', 'notes__998': None, 'play_style__999': 0, 'level__999': 11, 'chart_id__999': '0971', 'song_id__999': 57, 'difficulty_type__999': 'LEGGENDARIA', 'notes__999': None}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-09-12 13:03:02] [INFO] [seed]: === BEMANIWiki 全曲リストのスクレイピング・データインポートを開始します ===
+[2026-09-12 13:03:06] [ERROR] [seed]: エラーが発生しました: (psycopg2.errors.NotNullViolation) null value in column "notes" of relation "m_charts" violates not-null constraint
+DETAIL:  Failing row contains (0001, 0, 33, HYPER, 2, null).
+
+[SQL: INSERT INTO m_charts (chart_id, play_style, song_id, difficulty_type, level, notes) VALUES (%(chart_id__0)s, %(play_style__0)s, %(song_id__0)s, %(difficulty_type__0)s, %(level__0)s, %(notes__0)s), (%(chart_id__1)s, %(play_style__1)s, %(song_id__1)s,  ... 117079 characters truncated ... )s, %(play_style__999)s, %(song_id__999)s, %(difficulty_type__999)s, %(level__999)s, %(notes__999)s)]
+[parameters: {'level__0': 2, 'song_id__0': 33, 'play_style__0': 0, 'chart_id__0': '0001', 'notes__0': None, 'difficulty_type__0': 'HYPER', 'level__1': 2, 'song_id__1': 33, 'play_style__1': 0, 'chart_id__1': '0002', 'notes__1': None, 'difficulty_type__1': 'ANOTHER', 'level__2': 7, 'song_id__2': 33, 'play_style__2': 0, 'chart_id__2': '0003', 'notes__2': None, 'difficulty_type__2': 'BEGINNER', 'level__3': 4, 'song_id__3': 33, 'play_style__3': 0, 'chart_id__3': '0004', 'notes__3': None, 'difficulty_type__3': 'HYPER', 'level__4': 9, 'song_id__4': 33, 'play_style__4': 0, 'chart_id__4': '0005', 'notes__4': None, 'difficulty_type__4': 'ANOTHER', 'level__5': 9, 'song_id__5': 33, 'play_style__5': 0, 'chart_id__5': '0006', 'notes__5': None, 'difficulty_type__5': 'LEGGENDARIA', 'level__6': 6, 'song_id__6': 33, 'play_style__6': 0, 'chart_id__6': '0007', 'notes__6': None, 'difficulty_type__6': 'BEGINNER', 'level__7': 4, 'song_id__7': 33, 'play_style__7': 0, 'chart_id__7': '0008', 'notes__7': None, 'difficulty_type__7': 'HYPER', 'level__8': 6, 'song_id__8': 33 ... 5900 parameters truncated ... 'notes__991': None, 'difficulty_type__991': 'ANOTHER', 'level__992': 11, 'song_id__992': 56, 'play_style__992': 0, 'chart_id__992': '0964', 'notes__992': None, 'difficulty_type__992': 'BEGINNER', 'level__993': 5, 'song_id__993': 56, 'play_style__993': 0, 'chart_id__993': '0965', 'notes__993': None, 'difficulty_type__993': 'HYPER', 'level__994': 10, 'song_id__994': 56, 'play_style__994': 0, 'chart_id__994': '0966', 'notes__994': None, 'difficulty_type__994': 'ANOTHER', 'level__995': 11, 'song_id__995': 56, 'play_style__995': 0, 'chart_id__995': '0967', 'notes__995': None, 'difficulty_type__995': 'LEGGENDARIA', 'level__996': 11, 'song_id__996': 57, 'play_style__996': 0, 'chart_id__996': '0968', 'notes__996': None, 'difficulty_type__996': 'BEGINNER', 'level__997': 4, 'song_id__997': 57, 'play_style__997': 0, 'chart_id__997': '0969', 'notes__997': None, 'difficulty_type__997': 'HYPER', 'level__998': 10, 'song_id__998': 57, 'play_style__998': 0, 'chart_id__998': '0970', 'notes__998': None, 'difficulty_type__998': 'ANOTHER', 'level__999': 11, 'song_id__999': 57, 'play_style__999': 0, 'chart_id__999': '0971', 'notes__999': None, 'difficulty_type__999': 'LEGGENDARIA'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 2127, in _exec_insertmany_context
+    dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~^
+        cursor,
+        ^^^^^^^
+    ...<2 lines>...
+        context,
+        ^^^^^^^^
+    )
+    ^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "notes" of relation "m_charts" violates not-null constraint
+DETAIL:  Failing row contains (0001, 0, 33, HYPER, 2, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project_backend/src/test/seed.py", line 225, in seed_database
+    db.commit()
+    ~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/session.py", line 2035, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/session.py", line 1316, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/session.py", line 1290, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/unitofwork.py", line 465, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/persistence.py", line 94, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/persistence.py", line 1049, in _emit_insert_statements
+    result = connection.execute(
+        statement, multiparams, execution_options=execution_options
+    )
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_insertmany_context(dialect, context)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 2135, in _exec_insertmany_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e,
+        ^^
+    ...<4 lines>...
+        is_sub_exec=True,
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 2127, in _exec_insertmany_context
+    dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~^
+        cursor,
+        ^^^^^^^
+    ...<2 lines>...
+        context,
+        ^^^^^^^^
+    )
+    ^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.NotNullViolation) null value in column "notes" of relation "m_charts" violates not-null constraint
+DETAIL:  Failing row contains (0001, 0, 33, HYPER, 2, null).
+
+[SQL: INSERT INTO m_charts (chart_id, play_style, song_id, difficulty_type, level, notes) VALUES (%(chart_id__0)s, %(play_style__0)s, %(song_id__0)s, %(difficulty_type__0)s, %(level__0)s, %(notes__0)s), (%(chart_id__1)s, %(play_style__1)s, %(song_id__1)s,  ... 117079 characters truncated ... )s, %(play_style__999)s, %(song_id__999)s, %(difficulty_type__999)s, %(level__999)s, %(notes__999)s)]
+[parameters: {'level__0': 2, 'song_id__0': 33, 'play_style__0': 0, 'chart_id__0': '0001', 'notes__0': None, 'difficulty_type__0': 'HYPER', 'level__1': 2, 'song_id__1': 33, 'play_style__1': 0, 'chart_id__1': '0002', 'notes__1': None, 'difficulty_type__1': 'ANOTHER', 'level__2': 7, 'song_id__2': 33, 'play_style__2': 0, 'chart_id__2': '0003', 'notes__2': None, 'difficulty_type__2': 'BEGINNER', 'level__3': 4, 'song_id__3': 33, 'play_style__3': 0, 'chart_id__3': '0004', 'notes__3': None, 'difficulty_type__3': 'HYPER', 'level__4': 9, 'song_id__4': 33, 'play_style__4': 0, 'chart_id__4': '0005', 'notes__4': None, 'difficulty_type__4': 'ANOTHER', 'level__5': 9, 'song_id__5': 33, 'play_style__5': 0, 'chart_id__5': '0006', 'notes__5': None, 'difficulty_type__5': 'LEGGENDARIA', 'level__6': 6, 'song_id__6': 33, 'play_style__6': 0, 'chart_id__6': '0007', 'notes__6': None, 'difficulty_type__6': 'BEGINNER', 'level__7': 4, 'song_id__7': 33, 'play_style__7': 0, 'chart_id__7': '0008', 'notes__7': None, 'difficulty_type__7': 'HYPER', 'level__8': 6, 'song_id__8': 33 ... 5900 parameters truncated ... 'notes__991': None, 'difficulty_type__991': 'ANOTHER', 'level__992': 11, 'song_id__992': 56, 'play_style__992': 0, 'chart_id__992': '0964', 'notes__992': None, 'difficulty_type__992': 'BEGINNER', 'level__993': 5, 'song_id__993': 56, 'play_style__993': 0, 'chart_id__993': '0965', 'notes__993': None, 'difficulty_type__993': 'HYPER', 'level__994': 10, 'song_id__994': 56, 'play_style__994': 0, 'chart_id__994': '0966', 'notes__994': None, 'difficulty_type__994': 'ANOTHER', 'level__995': 11, 'song_id__995': 56, 'play_style__995': 0, 'chart_id__995': '0967', 'notes__995': None, 'difficulty_type__995': 'LEGGENDARIA', 'level__996': 11, 'song_id__996': 57, 'play_style__996': 0, 'chart_id__996': '0968', 'notes__996': None, 'difficulty_type__996': 'BEGINNER', 'level__997': 4, 'song_id__997': 57, 'play_style__997': 0, 'chart_id__997': '0969', 'notes__997': None, 'difficulty_type__997': 'HYPER', 'level__998': 10, 'song_id__998': 57, 'play_style__998': 0, 'chart_id__998': '0970', 'notes__998': None, 'difficulty_type__998': 'ANOTHER', 'level__999': 11, 'song_id__999': 57, 'play_style__999': 0, 'chart_id__999': '0971', 'notes__999': None, 'difficulty_type__999': 'LEGGENDARIA'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-09-12 13:13:39] [INFO] [seed]: === BEMANIWiki 全曲リストのスクレイピング・データインポートを開始します ===
+[2026-09-12 13:13:44] [INFO] [seed]: インポート完了: 楽曲 289 件 | 譜面 7729 件
+[2026-09-12 13:26:14] [INFO] [seed]: === BEMANIWiki 全曲リストのスクレイピング・データインポートを開始します ===
+[2026-09-12 13:26:17] [ERROR] [seed]: エラーが発生しました: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "m_songs_pkey"
+DETAIL:  Key (song_id)=(1) already exists.
+
+[SQL: INSERT INTO m_songs (song_id, title, artist) VALUES (%(song_id__0)s, %(title__0)s, %(artist__0)s), (%(song_id__1)s, %(title__1)s, %(artist__1)s), (%(song_id__2)s, %(title__2)s, %(artist__2)s), (%(song_id__3)s, %(title__3)s, %(artist__3)s), (%(song_id ... 14687 characters truncated ... ong_id__287)s, %(title__287)s, %(artist__287)s), (%(song_id__288)s, %(title__288)s, %(artist__288)s)]
+[parameters: {'title__0': 'デフォルト曲', 'artist__0': '', 'song_id__0': 1, 'title__1': 'デフォルト曲(過去にChampionship プレー特典だった曲)', 'artist__1': '', 'song_id__1': 2, 'title__2': 'デフォルト曲(過去にBITで解禁可能だった曲、特定月プレー特典曲、Akashic Explore 配信曲を含む)', 'artist__2': '', 'song_id__2': 3, 'title__3': 'DJ POINT 隠し曲', 'artist__3': '', 'song_id__3': 4, 'title__4': 'BIT解禁曲(過去にChampionship プレー特典だった曲)', 'artist__4': '', 'song_id__4': 5, 'title__5': 'BIT解禁曲(BITで解禁可能になった過去の特定月プレー特典曲、Akashic Explore 配信曲を含む)', 'artist__5': '', 'song_id__5': 6, 'title__6': '楽曲パック配信曲', 'artist__6': '', 'song_id__6': 7, 'title__7': 'スタートアップセレクション 楽曲パック配信曲', 'artist__7': '', 'song_id__7': 8, 'title__8': "pop'n music セレクション 楽曲パック配信曲", 'artist__8': '', 'song_id__8': 9, 'title__9': 'GITADORA セレクション 楽曲パック配信曲', 'artist__9': '', 'song_id__9': 10, 'title__10': 'jubeat セレクション 楽曲パック配信曲', 'artist__10': '', 'song_id__10': 11, 'title__11': 'SOUND VOLTEX セレクション 楽曲パック配信曲', 'artist__11': '', 'song_id__11': 12, 'title__12': 'ULTIMATE MOBILE セレクション 楽曲パック配信曲', 'artist__12': '', 'song_id__12': 13, 'title__13': 'BPL セレクション 楽曲パック配信曲', 'artist__13': '', 'song_id__13': 14, 'title__14': 'The 4th セレクション 楽曲パック配信曲', 'artist__14': '', 'song_id__14': 15, 'title__15': '東方Project セレクション 楽曲パック配信曲', 'artist__15': '', 'song_id__15': 16, 'title__16': '曲数', 'artist__16': 'Ver.' ... 767 parameters truncated ... 'artist__272': '[CN]5', 'song_id__272': 273, 'title__273': '[CN]2', 'artist__273': '[CN][BSS]5', 'song_id__273': 274, 'title__274': '-', 'artist__274': '[CN][BSS]6', 'song_id__274': 275, 'title__275': 'GRADIUSIC CYBER', 'artist__275': '-', 'song_id__275': 276, 'title__276': 'empathy', 'artist__276': '-', 'song_id__276': 277, 'title__277': 'PARANOIA survivor MAX', 'artist__277': '-', 'song_id__277': 278, 'title__278': 'Little Little Princess', 'artist__278': '-', 'song_id__278': 279, 'title__279': 'quell～the seventh slave～', 'artist__279': '-', 'song_id__279': 280, 'title__280': 'ワルツ第17番 ト短調”大犬のワルツ”', 'artist__280': '-', 'song_id__280': 281, 'title__281': 'TITANS RETURN', 'artist__281': '194', 'song_id__281': 282, 'title__282': 'neu', 'artist__282': '-', 'song_id__282': 283, 'title__283': 'EBONY & IVORY', 'artist__283': '-', 'song_id__283': 284, 'title__284': 'SEITEN NO TERIYAKI', 'artist__284': '-', 'song_id__284': 285, 'title__285': 'crew', 'artist__285': '-', 'song_id__285': 286, 'title__286': 'FUTURE is Dead', 'artist__286': '-', 'song_id__286': 287, 'title__287': 'ピアノ独奏無言歌 "灰燼"', 'artist__287': '-', 'song_id__287': 288, 'title__288': 'My Sweet Bird?', 'artist__288': '-', 'song_id__288': 289}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 2127, in _exec_insertmany_context
+    dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~^
+        cursor,
+        ^^^^^^^
+    ...<2 lines>...
+        context,
+        ^^^^^^^^
+    )
+    ^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "m_songs_pkey"
+DETAIL:  Key (song_id)=(1) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project_backend/src/test/seed.py", line 231, in seed_database
+    db.commit()
+    ~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/session.py", line 2035, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/session.py", line 1316, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/session.py", line 1290, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/unitofwork.py", line 465, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/persistence.py", line 94, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/orm/persistence.py", line 1049, in _emit_insert_statements
+    result = connection.execute(
+        statement, multiparams, execution_options=execution_options
+    )
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_insertmany_context(dialect, context)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 2135, in _exec_insertmany_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e,
+        ^^
+    ...<4 lines>...
+        is_sub_exec=True,
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 2127, in _exec_insertmany_context
+    dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~^
+        cursor,
+        ^^^^^^^
+    ...<2 lines>...
+        context,
+        ^^^^^^^^
+    )
+    ^
+  File "/mnt/d/WSL_recommendsite/project_backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "m_songs_pkey"
+DETAIL:  Key (song_id)=(1) already exists.
+
+[SQL: INSERT INTO m_songs (song_id, title, artist) VALUES (%(song_id__0)s, %(title__0)s, %(artist__0)s), (%(song_id__1)s, %(title__1)s, %(artist__1)s), (%(song_id__2)s, %(title__2)s, %(artist__2)s), (%(song_id__3)s, %(title__3)s, %(artist__3)s), (%(song_id ... 14687 characters truncated ... ong_id__287)s, %(title__287)s, %(artist__287)s), (%(song_id__288)s, %(title__288)s, %(artist__288)s)]
+[parameters: {'title__0': 'デフォルト曲', 'artist__0': '', 'song_id__0': 1, 'title__1': 'デフォルト曲(過去にChampionship プレー特典だった曲)', 'artist__1': '', 'song_id__1': 2, 'title__2': 'デフォルト曲(過去にBITで解禁可能だった曲、特定月プレー特典曲、Akashic Explore 配信曲を含む)', 'artist__2': '', 'song_id__2': 3, 'title__3': 'DJ POINT 隠し曲', 'artist__3': '', 'song_id__3': 4, 'title__4': 'BIT解禁曲(過去にChampionship プレー特典だった曲)', 'artist__4': '', 'song_id__4': 5, 'title__5': 'BIT解禁曲(BITで解禁可能になった過去の特定月プレー特典曲、Akashic Explore 配信曲を含む)', 'artist__5': '', 'song_id__5': 6, 'title__6': '楽曲パック配信曲', 'artist__6': '', 'song_id__6': 7, 'title__7': 'スタートアップセレクション 楽曲パック配信曲', 'artist__7': '', 'song_id__7': 8, 'title__8': "pop'n music セレクション 楽曲パック配信曲", 'artist__8': '', 'song_id__8': 9, 'title__9': 'GITADORA セレクション 楽曲パック配信曲', 'artist__9': '', 'song_id__9': 10, 'title__10': 'jubeat セレクション 楽曲パック配信曲', 'artist__10': '', 'song_id__10': 11, 'title__11': 'SOUND VOLTEX セレクション 楽曲パック配信曲', 'artist__11': '', 'song_id__11': 12, 'title__12': 'ULTIMATE MOBILE セレクション 楽曲パック配信曲', 'artist__12': '', 'song_id__12': 13, 'title__13': 'BPL セレクション 楽曲パック配信曲', 'artist__13': '', 'song_id__13': 14, 'title__14': 'The 4th セレクション 楽曲パック配信曲', 'artist__14': '', 'song_id__14': 15, 'title__15': '東方Project セレクション 楽曲パック配信曲', 'artist__15': '', 'song_id__15': 16, 'title__16': '曲数', 'artist__16': 'Ver.' ... 767 parameters truncated ... 'artist__272': '[CN]5', 'song_id__272': 273, 'title__273': '[CN]2', 'artist__273': '[CN][BSS]5', 'song_id__273': 274, 'title__274': '-', 'artist__274': '[CN][BSS]6', 'song_id__274': 275, 'title__275': 'GRADIUSIC CYBER', 'artist__275': '-', 'song_id__275': 276, 'title__276': 'empathy', 'artist__276': '-', 'song_id__276': 277, 'title__277': 'PARANOIA survivor MAX', 'artist__277': '-', 'song_id__277': 278, 'title__278': 'Little Little Princess', 'artist__278': '-', 'song_id__278': 279, 'title__279': 'quell～the seventh slave～', 'artist__279': '-', 'song_id__279': 280, 'title__280': 'ワルツ第17番 ト短調”大犬のワルツ”', 'artist__280': '-', 'song_id__280': 281, 'title__281': 'TITANS RETURN', 'artist__281': '194', 'song_id__281': 282, 'title__282': 'neu', 'artist__282': '-', 'song_id__282': 283, 'title__283': 'EBONY & IVORY', 'artist__283': '-', 'song_id__283': 284, 'title__284': 'SEITEN NO TERIYAKI', 'artist__284': '-', 'song_id__284': 285, 'title__285': 'crew', 'artist__285': '-', 'song_id__285': 286, 'title__286': 'FUTURE is Dead', 'artist__286': '-', 'song_id__286': 287, 'title__287': 'ピアノ独奏無言歌 "灰燼"', 'artist__287': '-', 'song_id__287': 288, 'title__288': 'My Sweet Bird?', 'artist__288': '-', 'song_id__288': 289}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)

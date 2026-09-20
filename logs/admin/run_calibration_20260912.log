@@ -1,0 +1,108 @@
+[2026-09-12 13:28:22] [INFO] [run_calibration]: === 定期キャリブレーション処理を開始します ===
+[2026-09-12 13:28:22] [INFO] [run_calibration]: -> クリア力キャリブレーション実行中...
+[2026-09-12 13:28:22] [ERROR] [run_calibration]: 定期キャリブレーション中に致命的なエラーが発生しました: name 'MUser' is not defined
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/run_calibrate.py", line 20, in main
+    calibrate_clear()
+    ~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/scripts/calibrate_clear_irt.py", line 46, in calibrate_clear
+    raw_users = db.query(MUser).filter(MUser.delete_flag == 0).all()
+                         ^^^^^
+NameError: name 'MUser' is not defined
+[2026-09-12 13:32:47] [INFO] [run_calibration]: === 定期キャリブレーション処理を開始します ===
+[2026-09-12 13:32:47] [INFO] [run_calibration]: -> クリア力キャリブレーション実行中...
+[2026-09-12 13:32:47] [ERROR] [run_calibration]: 定期キャリブレーション中に致命的なエラーが発生しました: 'Session' object has no attribute 'queryscore_models'
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/run_calibrate.py", line 20, in main
+    calibrate_clear()
+    ~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/scripts/calibrate_clear_irt.py", line 49, in calibrate_clear
+    played_count = db.queryscore_models.Score.filter(
+                   ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Session' object has no attribute 'queryscore_models'
+[2026-09-12 13:37:44] [INFO] [run_calibration]: === 定期キャリブレーション処理を開始します ===
+[2026-09-12 13:37:44] [INFO] [run_calibration]: -> クリア力キャリブレーション実行中...
+[2026-09-12 13:37:45] [ERROR] [run_calibration]: 定期キャリブレーション中に致命的なエラーが発生しました: name 'Score' is not defined
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/run_calibrate.py", line 20, in main
+    calibrate_clear()
+    ~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/scripts/calibrate_clear_irt.py", line 50, in calibrate_clear
+    Score.user_id == u.user_id,
+    ^^^^^
+NameError: name 'Score' is not defined
+[2026-09-12 13:38:32] [INFO] [run_calibration]: === 定期キャリブレーション処理を開始します ===
+[2026-09-12 13:38:32] [INFO] [run_calibration]: -> クリア力キャリブレーション実行中...
+[2026-09-12 13:38:47] [ERROR] [run_calibration]: 定期キャリブレーション中に致命的なエラーが発生しました: name 'DUserIrt' is not defined
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/run_calibrate.py", line 20, in main
+    calibrate_clear()
+    ~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/scripts/calibrate_clear_irt.py", line 182, in calibrate_clear
+    u_obj.irt_param = DUserIrt(user_id=uid)
+                      ^^^^^^^^
+NameError: name 'DUserIrt' is not defined
+[2026-09-12 13:40:06] [INFO] [run_calibration]: === 定期キャリブレーション処理を開始します ===
+[2026-09-12 13:40:06] [INFO] [run_calibration]: -> クリア力キャリブレーション実行中...
+[2026-09-12 13:40:21] [INFO] [run_calibration]: -> スコア力キャリブレーション実行中...
+[2026-09-12 13:40:21] [ERROR] [run_calibration]: 定期キャリブレーション中に致命的なエラーが発生しました: name 'chart_models' is not defined
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/run_calibrate.py", line 24, in main
+    calibrate_scores()
+    ~~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/scripts/calibrate_score_irt.py", line 32, in calibrate_scores
+    charts = db.query(chart_models.MChart).all()
+                      ^^^^^^^^^^^^
+NameError: name 'chart_models' is not defined
+[2026-09-12 13:42:03] [INFO] [run_calibration]: === 定期キャリブレーション処理を開始します ===
+[2026-09-12 13:42:03] [INFO] [run_calibration]: -> クリア力キャリブレーション実行中...
+[2026-09-12 13:42:19] [INFO] [run_calibration]: -> スコア力キャリブレーション実行中...
+[2026-09-12 13:42:19] [ERROR] [run_calibration]: 定期キャリブレーション中に致命的なエラーが発生しました: name 'DChartScoreIrt' is not defined
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/run_calibrate.py", line 24, in main
+    calibrate_scores()
+    ~~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/scripts/calibrate_score_irt.py", line 35, in calibrate_scores
+    DChartScoreIrt.chart_id == chart.chart_id,
+    ^^^^^^^^^^^^^^
+NameError: name 'DChartScoreIrt' is not defined
+[2026-09-12 13:45:08] [INFO] [run_calibration]: === 定期キャリブレーション処理を開始します ===
+[2026-09-12 13:45:08] [INFO] [run_calibration]: -> クリア力キャリブレーション実行中...
+[2026-09-12 13:45:23] [INFO] [run_calibration]: -> スコア力キャリブレーション実行中...
+[2026-09-12 13:45:23] [ERROR] [run_calibration]: 定期キャリブレーション中に致命的なエラーが発生しました: name 'DChartScoreIrt' is not defined
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/run_calibrate.py", line 24, in main
+    calibrate_scores()
+    ~~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/scripts/calibrate_score_irt.py", line 39, in calibrate_scores
+    db.add(DChartScoreIrt(
+           ^^^^^^^^^^^^^^
+NameError: name 'DChartScoreIrt' is not defined
+[2026-09-12 13:47:04] [INFO] [run_calibration]: === 定期キャリブレーション処理を開始します ===
+[2026-09-12 13:47:04] [INFO] [run_calibration]: -> クリア力キャリブレーション実行中...
+[2026-09-12 13:47:24] [INFO] [run_calibration]: -> スコア力キャリブレーション実行中...
+[2026-09-12 13:47:35] [ERROR] [run_calibration]: 定期キャリブレーション中に致命的なエラーが発生しました: module 'src.models.chart_models' has no attribute 'DUserIrt'
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/run_calibrate.py", line 24, in main
+    calibrate_scores()
+    ~~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/scripts/calibrate_score_irt.py", line 49, in calibrate_scores
+    if not db.query(user_models.DUserIrt).filter(user_models.DUserIrt.user_id == user.user_id).first():
+                                                 ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'src.models.chart_models' has no attribute 'DUserIrt'
+[2026-09-12 13:50:31] [INFO] [run_calibration]: === 定期キャリブレーション処理を開始します ===
+[2026-09-12 13:50:31] [INFO] [run_calibration]: -> クリア力キャリブレーション実行中...
+[2026-09-12 13:50:46] [INFO] [run_calibration]: -> スコア力キャリブレーション実行中...
+[2026-09-12 13:51:36] [ERROR] [run_calibration]: 定期キャリブレーション中に致命的なエラーが発生しました: name 'MChart' is not defined
+Traceback (most recent call last):
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/run_calibrate.py", line 24, in main
+    calibrate_scores()
+    ~~~~~~~~~~~~~~~~^^
+  File "/mnt/d/WSL_recommendsite/project_backend/src/calibrate/scripts/calibrate_score_irt.py", line 129, in calibrate_scores
+    .join(chart_models.MChart, (score_models.Score.chart_id == MChart.chart_id) & (score_models.Score.play_style == MChart.play_style))
+                                                               ^^^^^^
+NameError: name 'MChart' is not defined. Did you mean: 'chart'?
+[2026-09-12 13:52:32] [INFO] [run_calibration]: === 定期キャリブレーション処理を開始します ===
+[2026-09-12 13:52:32] [INFO] [run_calibration]: -> クリア力キャリブレーション実行中...
+[2026-09-12 13:52:49] [INFO] [run_calibration]: -> スコア力キャリブレーション実行中...
+[2026-09-12 13:53:41] [INFO] [run_calibration]: === 全ての定期キャリブレーションが正常に完了しました ===
